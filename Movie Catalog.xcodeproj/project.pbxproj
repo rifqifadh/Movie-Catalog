@@ -57,7 +57,7 @@
 		997362E125C7BA95006D7185 /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
 		997CC36825C143C90098ABA4 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SharedUI; path = Modules/SharedUI; sourceTree = "<group>"; };
 		997CC36B25C1447C0098ABA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		99FD25EA25C130CD00A61932 /* MovieCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FD25EA25C130CD00A61932 /* Movie Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Catalog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FD25ED25C130CE00A61932 /* MovieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApp.swift; sourceTree = "<group>"; };
 		99FD25F125C130D600A61932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FD25F425C130D600A61932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		99FD25EB25C130CD00A61932 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99FD25EA25C130CD00A61932 /* MovieCatalog.app */,
+				99FD25EA25C130CD00A61932 /* Movie Catalog.app */,
 				99122E4025CC5272002BB5A0 /* MovieCatalogTests.xctest */,
 			);
 			name = Products;
@@ -276,9 +276,9 @@
 			productReference = 99122E4025CC5272002BB5A0 /* MovieCatalogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		99FD25E925C130CD00A61932 /* MovieCatalog */ = {
+		99FD25E925C130CD00A61932 /* Movie Catalog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "MovieCatalog" */;
+			buildConfigurationList = 99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "Movie Catalog" */;
 			buildPhases = (
 				99FD25E625C130CD00A61932 /* Sources */,
 				99FD25E725C130CD00A61932 /* Frameworks */,
@@ -289,7 +289,7 @@
 			);
 			dependencies = (
 			);
-			name = MovieCatalog;
+			name = "Movie Catalog";
 			packageProductDependencies = (
 				997CC35F25C1437B0098ABA4 /* Core */,
 				997CC36125C1437E0098ABA4 /* Networking */,
@@ -298,7 +298,7 @@
 				990196EA25C945BA00FBCD1E /* Movie */,
 			);
 			productName = "Movie Catalog";
-			productReference = 99FD25EA25C130CD00A61932 /* MovieCatalog.app */;
+			productReference = 99FD25EA25C130CD00A61932 /* Movie Catalog.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +335,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99FD25E925C130CD00A61932 /* MovieCatalog */,
+				99FD25E925C130CD00A61932 /* Movie Catalog */,
 				99122E3F25CC5272002BB5A0 /* MovieCatalogTests */,
 			);
 		};
@@ -414,7 +414,7 @@
 /* Begin PBXTargetDependency section */
 		99122E4625CC5272002BB5A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 99FD25E925C130CD00A61932 /* MovieCatalog */;
+			target = 99FD25E925C130CD00A61932 /* Movie Catalog */;
 			targetProxy = 99122E4525CC5272002BB5A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -641,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "MovieCatalog" */ = {
+		99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "Movie Catalog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FD25FA25C130D600A61932 /* Debug */,

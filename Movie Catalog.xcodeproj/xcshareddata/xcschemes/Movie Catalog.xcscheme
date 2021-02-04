@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "99FD25E925C130CD00A61932"
-               BuildableName = "MovieCatalog.app"
-               BlueprintName = "MovieCatalog"
+               BuildableName = "Movie Catalog.app"
+               BlueprintName = "Movie Catalog"
                ReferencedContainer = "container:Movie Catalog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,8 +55,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FD25E925C130CD00A61932"
-            BuildableName = "MovieCatalog.app"
-            BlueprintName = "MovieCatalog"
+            BuildableName = "Movie Catalog.app"
+            BlueprintName = "Movie Catalog"
             ReferencedContainer = "container:Movie Catalog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "99FD25E925C130CD00A61932"
-            BuildableName = "MovieCatalog.app"
-            BlueprintName = "MovieCatalog"
+            BuildableName = "Movie Catalog.app"
+            BlueprintName = "Movie Catalog"
             ReferencedContainer = "container:Movie Catalog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
