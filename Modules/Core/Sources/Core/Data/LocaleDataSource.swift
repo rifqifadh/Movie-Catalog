@@ -9,11 +9,12 @@ import Combine
 import Foundation
 
 public protocol LocaleDataSource {
-  associatedtype Request
-  associatedtype Response
-  
-  func list(request: Request?) -> AnyPublisher<[Response], Error>
-  func add(entities: Response) -> AnyPublisher<Bool, Error>
-  func get(id: String) -> AnyPublisher<Response, Error>
-  func update(id: Int, entity: Response) -> AnyPublisher<Bool, Error>
+	associatedtype Request
+	associatedtype Response
+	
+	func list(request: Request?) -> AnyPublisher<[Response], Error>
+	func add(entities: Response) -> AnyPublisher<Bool, Error>
+	func get(id: Request?) -> AnyPublisher<Response, Error>
+	func delete(id: Request?) -> AnyPublisher<Bool, Error>
+	func update(id: Request?, entity: Response) -> AnyPublisher<Bool, Error>
 }

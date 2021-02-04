@@ -9,11 +9,11 @@ import Foundation
 
 public struct Endpoint {
   var path: String
-  var queryItems: [URLQueryItem] = []
+	var queryParams: [String: String]
   
-  public init(path: String, queryItems: [URLQueryItem] = []) {
+  public init(path: String, queryParams: [String: String] = ["":""]) {
     self.path = path
-    self.queryItems = queryItems
+	self.queryParams = queryParams
   }
 }
 
@@ -21,12 +21,12 @@ extension Endpoint {
   public var url: URL {
     var components = URLComponents()
     components.scheme = "https"
-    components.host = Constants.TMDBEnv.baseUrl
-    components.path = "/" + path
-    components.queryItems = queryItems.map { _ in
-      URLQueryItem(name: "api_key", value: Constants.TMDBEnv.apiKey)
-    }
-    
+    components.host = "api.themoviedb.org"
+    components.path = "/3" + path
+	var queryItems = [URLQueryItem(name: "api_key", value: Constants.TMDBEnv.apiKey)]
+	queryItems.append(contentsOf: queryParams.map { URLQueryItem(name: $0.key, value: $0.value)})
+	components.queryItems = queryItems
+	
     guard let url = components.url else {
       preconditionFailure(
         "Invalid URL components: \(components)"
