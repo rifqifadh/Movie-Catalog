@@ -11,6 +11,7 @@
 		990196DE25C92B8B00FBCD1E /* ContentDetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990196DD25C92B8B00FBCD1E /* ContentDetailMovieView.swift */; };
 		990196E725C93A1800FBCD1E /* DetailMovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990196E625C93A1800FBCD1E /* DetailMovieRouter.swift */; };
 		990196EB25C945BA00FBCD1E /* Movie in Frameworks */ = {isa = PBXBuildFile; productRef = 990196EA25C945BA00FBCD1E /* Movie */; };
+		99122E4325CC5272002BB5A0 /* MovieCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99122E4225CC5272002BB5A0 /* MovieCatalogTests.swift */; };
 		991EE99425C6FE22002DD03F /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EE99325C6FE22002DD03F /* HomeRowView.swift */; };
 		994617FA25C44F860090CD03 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994617F925C44F860090CD03 /* RootTabView.swift */; };
 		9946180425C4511E0090CD03 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946180325C4511E0090CD03 /* MoviesView.swift */; };
@@ -28,10 +29,23 @@
 		99FD25F525C130D600A61932 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FD25F425C130D600A61932 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		99122E4525CC5272002BB5A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FD25E225C130CD00A61932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99FD25E925C130CD00A61932;
+			remoteInfo = "Movie Catalog";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		990196D725C7FD2700FBCD1E /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		990196DD25C92B8B00FBCD1E /* ContentDetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailMovieView.swift; sourceTree = "<group>"; };
 		990196E625C93A1800FBCD1E /* DetailMovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieRouter.swift; sourceTree = "<group>"; };
+		99122E4025CC5272002BB5A0 /* MovieCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99122E4225CC5272002BB5A0 /* MovieCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogTests.swift; sourceTree = "<group>"; };
+		99122E4425CC5272002BB5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991EE99325C6FE22002DD03F /* HomeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
 		994617F925C44F860090CD03 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		9946180325C4511E0090CD03 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
@@ -43,7 +57,7 @@
 		997362E125C7BA95006D7185 /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
 		997CC36825C143C90098ABA4 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SharedUI; path = Modules/SharedUI; sourceTree = "<group>"; };
 		997CC36B25C1447C0098ABA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		99FD25EA25C130CD00A61932 /* Movie Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Catalog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FD25EA25C130CD00A61932 /* MovieCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FD25ED25C130CE00A61932 /* MovieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApp.swift; sourceTree = "<group>"; };
 		99FD25F125C130D600A61932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99FD25F425C130D600A61932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		99122E3D25CC5272002BB5A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99FD25E725C130CD00A61932 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,6 +130,15 @@
 				9946181725C5859E0090CD03 /* Injection.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		99122E4125CC5272002BB5A0 /* MovieCatalogTests */ = {
+			isa = PBXGroup;
+			children = (
+				99122E4225CC5272002BB5A0 /* MovieCatalogTests.swift */,
+				99122E4425CC5272002BB5A0 /* Info.plist */,
+			);
+			path = MovieCatalogTests;
 			sourceTree = "<group>";
 		};
 		994617F825C44F720090CD03 /* App */ = {
@@ -190,6 +220,7 @@
 				99FD25FF25C1341E00A61932 /* Networking */,
 				99FD25FD25C1312B00A61932 /* Core */,
 				99FD25EC25C130CD00A61932 /* Movie Catalog */,
+				99122E4125CC5272002BB5A0 /* MovieCatalogTests */,
 				99FD25EB25C130CD00A61932 /* Products */,
 				997CC35E25C1437B0098ABA4 /* Frameworks */,
 			);
@@ -198,7 +229,8 @@
 		99FD25EB25C130CD00A61932 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99FD25EA25C130CD00A61932 /* Movie Catalog.app */,
+				99FD25EA25C130CD00A61932 /* MovieCatalog.app */,
+				99122E4025CC5272002BB5A0 /* MovieCatalogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,9 +258,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99FD25E925C130CD00A61932 /* Movie Catalog */ = {
+		99122E3F25CC5272002BB5A0 /* MovieCatalogTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "Movie Catalog" */;
+			buildConfigurationList = 99122E4925CC5272002BB5A0 /* Build configuration list for PBXNativeTarget "MovieCatalogTests" */;
+			buildPhases = (
+				99122E3C25CC5272002BB5A0 /* Sources */,
+				99122E3D25CC5272002BB5A0 /* Frameworks */,
+				99122E3E25CC5272002BB5A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99122E4625CC5272002BB5A0 /* PBXTargetDependency */,
+			);
+			name = MovieCatalogTests;
+			productName = MovieCatalogTests;
+			productReference = 99122E4025CC5272002BB5A0 /* MovieCatalogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		99FD25E925C130CD00A61932 /* MovieCatalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "MovieCatalog" */;
 			buildPhases = (
 				99FD25E625C130CD00A61932 /* Sources */,
 				99FD25E725C130CD00A61932 /* Frameworks */,
@@ -239,7 +289,7 @@
 			);
 			dependencies = (
 			);
-			name = "Movie Catalog";
+			name = MovieCatalog;
 			packageProductDependencies = (
 				997CC35F25C1437B0098ABA4 /* Core */,
 				997CC36125C1437E0098ABA4 /* Networking */,
@@ -248,7 +298,7 @@
 				990196EA25C945BA00FBCD1E /* Movie */,
 			);
 			productName = "Movie Catalog";
-			productReference = 99FD25EA25C130CD00A61932 /* Movie Catalog.app */;
+			productReference = 99FD25EA25C130CD00A61932 /* MovieCatalog.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,6 +310,10 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					99122E3F25CC5272002BB5A0 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 99FD25E925C130CD00A61932;
+					};
 					99FD25E925C130CD00A61932 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -281,12 +335,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99FD25E925C130CD00A61932 /* Movie Catalog */,
+				99FD25E925C130CD00A61932 /* MovieCatalog */,
+				99122E3F25CC5272002BB5A0 /* MovieCatalogTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		99122E3E25CC5272002BB5A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99FD25E825C130CD00A61932 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +382,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		99122E3C25CC5272002BB5A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99122E4325CC5272002BB5A0 /* MovieCatalogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99FD25E625C130CD00A61932 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,7 +411,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		99122E4625CC5272002BB5A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99FD25E925C130CD00A61932 /* MovieCatalog */;
+			targetProxy = 99122E4525CC5272002BB5A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		99122E4725CC5272002BB5A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UVT3R8TDBM;
+				INFOPLIST_FILE = MovieCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tds.MovieCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie Catalog.app/Movie Catalog";
+			};
+			name = Debug;
+		};
+		99122E4825CC5272002BB5A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UVT3R8TDBM;
+				INFOPLIST_FILE = MovieCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tds.MovieCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movie Catalog.app/Movie Catalog";
+			};
+			name = Release;
+		};
 		99FD25F725C130D600A61932 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -505,6 +623,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		99122E4925CC5272002BB5A0 /* Build configuration list for PBXNativeTarget "MovieCatalogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99122E4725CC5272002BB5A0 /* Debug */,
+				99122E4825CC5272002BB5A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		99FD25E525C130CD00A61932 /* Build configuration list for PBXProject "Movie Catalog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -514,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "Movie Catalog" */ = {
+		99FD25F925C130D600A61932 /* Build configuration list for PBXNativeTarget "MovieCatalog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99FD25FA25C130D600A61932 /* Debug */,
