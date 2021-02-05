@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode12.3 
 xcode_project: Movie Catalog.xcodeproj 
-xcode_scheme: MovieCatalogTests
+xcode_scheme: Movie Catalog
 xcode_destination: platform=iOS Simulator,OS=14.3,name=iPhone 12 Pro
