@@ -25,17 +25,21 @@ public class HomeInteractor: HomeUseCase {
 	
 	public func getNowPlayingMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _repository.getNowPlayingMovies()
+			.eraseToAnyPublisher()
 	}
 	
 	public func getPopularMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _repository.getPopularMovies()
+			.eraseToAnyPublisher()
 	}
 	
 	public func getTopRatedMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _repository.getTopRatedMovies()
+			.eraseToAnyPublisher()
 	}
 	
 	public func getUpcomingMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _repository.getUpcomingMovies()
+			.eraseToAnyPublisher()
 	}
 }

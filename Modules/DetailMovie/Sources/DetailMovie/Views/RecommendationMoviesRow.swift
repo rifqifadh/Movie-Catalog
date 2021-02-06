@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SwiftUIView.swift
 //  
 //
 //  Created by Rifqi Fadhlillah on 06/02/21.
@@ -11,24 +11,25 @@ import Core
 
 import SwiftUI
 
-public struct HomeRowView<Header: View, Destination: View>: View {
+public struct RecommendationMoviesRow<Destination: View>: View {
 	
 	var items: [MovieModel] = [MovieModel.default]
-	var header: () -> Header
 	var destination: (_ movie: MovieModel) -> Destination
 	
 	public init(
 		items: [MovieModel],
-		@ViewBuilder header: @escaping () -> Header,
 		@ViewBuilder destination: @escaping (_ movie: MovieModel) -> Destination) {
 		self.items = items
-		self.header = header
 		self.destination = destination
 	}
 	
 	public var body: some View {
 		VStack(alignment: .leading) {
-			header()
+			Text("Recommendation Movies")
+				.font(.headline)
+				.fontWeight(.semibold)
+				.padding(.horizontal)
+				.padding(.top)
 			ScrollView(.horizontal, showsIndicators: false) {
 				LazyHStack(alignment: .top, spacing: 12) {
 					ForEach(items) { movie in
@@ -50,7 +51,7 @@ public struct HomeRowView<Header: View, Destination: View>: View {
 }
 
 // MARK: Link Builder
-public extension HomeRowView {
+public extension RecommendationMoviesRow {
 	func linkBuilder<Content: View>(for movie: MovieModel, @ViewBuilder content: () -> Content) -> some View {
 		NavigationLink(
 			destination: destination(movie)) {

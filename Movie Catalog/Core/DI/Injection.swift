@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import Movie
 import Core
 import Realm
 import RealmSwift
 import Home
+import DetailMovie
 
 class Injection: NSObject {
 	
@@ -18,20 +18,20 @@ class Injection: NSObject {
 	
 	func provideHome() -> HomeUseCase {
 		
-		let remote: Core.RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
-		let locale: Core.LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
+		let remote: RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
+		let locale: LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
 		
 		let repository = MovieRepository.sharedInstance(remote, locale)
 		
 		return HomeInteractor(repository: repository)
 	}
 	
-//	func provideDetailMovie(movie: Core.MovieModel) -> DetailMovieUseCase {
-//		let remote: Movie.RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
-//		let locale: Movie.LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
-//		
-//		let repository = MovieRepository.sharedInstance(remote, locale)
-//		
-//		return DetailMovieInteractor(repository: repository, movie: movie)
-//	}
+	func provideDetailMovie(movie: MovieModel) -> DetailMovieUseCase {
+		let remote: RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
+		let locale: LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
+		
+		let repository = MovieRepository.sharedInstance(remote, locale)
+		
+		return DetailMovieInteractor(repository: repository, movie: movie)
+	}
 }

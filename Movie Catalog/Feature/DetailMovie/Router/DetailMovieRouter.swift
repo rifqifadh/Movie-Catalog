@@ -8,13 +8,13 @@
 import Foundation
 import SwiftUI
 import Core
-import Movie
+import DetailMovie
 
-//class DetailMovieRouter {
-//	func makeDetailView(for movie: Core.MovieModel) -> some View {
-//		let useCase = Injection.init().provideDetailMovie(movie: movie)
-//		let presenter = DetailMoviePresenter(useCase: useCase, movie: movie)
-//		
-//		return DetailMovieView(presenter: presenter, movie: movie)
-//	}
-//}
+class DetailMovieRouter {
+	func makeDetailView(for movie: Core.MovieModel) -> some View {
+		let useCase = Injection.init().provideDetailMovie(movie: movie)
+		let viewModel = DetailMovieViewModel(useCase: useCase, movie: movie)
+		
+		return DetailMovieView(viewModel: viewModel, movie: movie)
+	}
+}

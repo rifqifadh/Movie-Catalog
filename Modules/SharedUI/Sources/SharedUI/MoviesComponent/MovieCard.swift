@@ -55,7 +55,6 @@ public struct MovieCardView: View {
 			
 			Text(_title)
 				.font(_width > 110 ? .caption : .caption2)
-				.foregroundColor(Color.black)
 				.fontWeight(.medium)
 				.multilineTextAlignment(.center)
 				.lineLimit(2)
@@ -66,4 +65,3 @@ public struct MovieCardView: View {
 		.frame(width: _width, height: _width * 2)
 	}
 }
-

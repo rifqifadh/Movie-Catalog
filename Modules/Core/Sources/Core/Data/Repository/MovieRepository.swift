@@ -13,6 +13,8 @@ public protocol MovieRepositoryProtocol {
 	func getPopularMovies() -> AnyPublisher<MoviesModel, Error>
 	func getTopRatedMovies() -> AnyPublisher<MoviesModel, Error>
 	func getUpcomingMovies() -> AnyPublisher<MoviesModel, Error>
+	func getMovie(with id: String) -> AnyPublisher<DetailMovieModel, Error>
+	func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error>
 }
 
 public final class MovieRepository: NSObject {
@@ -54,6 +56,18 @@ extension MovieRepository: MovieRepositoryProtocol {
 	public func getUpcomingMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _remote.getUpcomingMovies()
 			.map { MoviesMapper.transformResponseToDomain(response: $0)}
+			.eraseToAnyPublisher()
+	}
+	
+	public func getMovie(with id: String) -> AnyPublisher<DetailMovieModel, Error> {
+		return _remote.getMovie(with: id)
+			.map { DetailMovieMapper.transformResponseToDomain(response: $0) }
+			.eraseToAnyPublisher()
+	}
+	
+	public func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error> {
+		return _remote.getRecommendationMovies(with: id)
+			.map { MoviesMapper.transformResponseToDomain(response: $0) }
 			.eraseToAnyPublisher()
 	}
 }

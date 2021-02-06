@@ -12,7 +12,7 @@
 		990196E725C93A1800FBCD1E /* DetailMovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990196E625C93A1800FBCD1E /* DetailMovieRouter.swift */; };
 		99122E4325CC5272002BB5A0 /* MovieCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99122E4225CC5272002BB5A0 /* MovieCatalogTests.swift */; };
 		991D417D25CE718900D91880 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 991D417C25CE718900D91880 /* Home */; };
-		991EE99425C6FE22002DD03F /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EE99325C6FE22002DD03F /* HomeRowView.swift */; };
+		991D418C25CEBCE700D91880 /* DetailMovie in Frameworks */ = {isa = PBXBuildFile; productRef = 991D418B25CEBCE700D91880 /* DetailMovie */; };
 		994617FA25C44F860090CD03 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994617F925C44F860090CD03 /* RootTabView.swift */; };
 		9946180425C4511E0090CD03 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946180325C4511E0090CD03 /* MoviesView.swift */; };
 		9946180825C4512D0090CD03 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946180725C4512D0090CD03 /* FavoriteView.swift */; };
@@ -46,7 +46,7 @@
 		99122E4225CC5272002BB5A0 /* MovieCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogTests.swift; sourceTree = "<group>"; };
 		99122E4425CC5272002BB5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991D417925CE717200D91880 /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = Modules/Home; sourceTree = "<group>"; };
-		991EE99325C6FE22002DD03F /* HomeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
+		991D418825CEBC9900D91880 /* DetailMovie */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DetailMovie; path = Modules/DetailMovie; sourceTree = "<group>"; };
 		994617F925C44F860090CD03 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		9946180325C4511E0090CD03 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		9946180725C4512D0090CD03 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991D418C25CEBCE700D91880 /* DetailMovie in Frameworks */,
 				9985F29D25C3DF1E00FBB3C2 /* SDWebImageSwiftUI in Frameworks */,
 				9985F2A025C3DF7C00FBB3C2 /* SharedUI in Frameworks */,
 				997CC36225C1437E0098ABA4 /* Networking in Frameworks */,
@@ -99,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				9946180325C4511E0090CD03 /* MoviesView.swift */,
-				991EE99325C6FE22002DD03F /* HomeRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				997CC36B25C1447C0098ABA4 /* .swiftlint.yml */,
+				991D418825CEBC9900D91880 /* DetailMovie */,
 				991D417925CE717200D91880 /* Home */,
 				997CC36825C143C90098ABA4 /* SharedUI */,
 				99FD25FF25C1341E00A61932 /* Networking */,
@@ -293,6 +294,7 @@
 				9985F29C25C3DF1E00FBB3C2 /* SDWebImageSwiftUI */,
 				9985F29F25C3DF7C00FBB3C2 /* SharedUI */,
 				991D417C25CE718900D91880 /* Home */,
+				991D418B25CEBCE700D91880 /* DetailMovie */,
 			);
 			productName = "Movie Catalog";
 			productReference = 99FD25EA25C130CD00A61932 /* Movie Catalog.app */;
@@ -398,7 +400,6 @@
 				9946180425C4511E0090CD03 /* MoviesView.swift in Sources */,
 				9946180825C4512D0090CD03 /* FavoriteView.swift in Sources */,
 				990196DE25C92B8B00FBCD1E /* ContentDetailMovieView.swift in Sources */,
-				991EE99425C6FE22002DD03F /* HomeRowView.swift in Sources */,
 				99FD25EE25C130CE00A61932 /* MovieApp.swift in Sources */,
 				990196E725C93A1800FBCD1E /* DetailMovieRouter.swift in Sources */,
 				990196D825C7FD2700FBCD1E /* HomeRouter.swift in Sources */,
@@ -663,6 +664,10 @@
 		991D417C25CE718900D91880 /* Home */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Home;
+		};
+		991D418B25CEBCE700D91880 /* DetailMovie */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DetailMovie;
 		};
 		997CC35F25C1437B0098ABA4 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;

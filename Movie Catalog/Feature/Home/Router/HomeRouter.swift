@@ -7,13 +7,14 @@
 
 import SwiftUI
 import Core
+import DetailMovie
 
 class HomeRouter {
 	
-//	func makeDetailView(for movie: Core.MovieModel) -> some View {
-//		let useCase = Injection.init().provideDetailMovie(movie: movie)
-//		let presenter = DetailMoviePresenter(useCase: useCase, movie: movie)
-//		
-//		return DetailMovieView(presenter: presenter, movie: movie)
-//	}
+	func makeDetailView(for movie: Core.MovieModel) -> some View {
+		let useCase = Injection.init().provideDetailMovie(movie: movie)
+		let viewModel = DetailMovieViewModel(useCase: useCase, movie: movie)
+		
+		return DetailMovieView(viewModel: viewModel, movie: movie)
+	}
 }
