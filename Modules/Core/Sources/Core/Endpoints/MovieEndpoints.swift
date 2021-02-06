@@ -33,4 +33,8 @@ extension Endpoint {
 	static func getRecommendationMovies(id: String) -> Self {
 		Endpoint(path: "/movie/\(id)/recommendations")
 	}
+	
+	static func getCredits(id: String) -> Self {
+		Endpoint(path: "/movie/\(id)/credits")
+	}
 }

@@ -20,4 +20,18 @@ struct MovieMapper {
 		entity.releaseDate = domain.releaseDate
 		return entity
 	}
+	
+	static func transformEntityToDomain(entity: [MovieEntity]) -> [MovieModel] {
+		return entity.map { result in
+			return MovieModel(
+				id: result.id,
+				title: result.title,
+				overview: result.overview,
+				voteAverage: result.voteAverage,
+				posterPath: result.posterPath,
+				backdropPath: result.backdropPath,
+				releaseDate: result.releaseDate
+			)
+		}
+	}
 }

@@ -21,6 +21,7 @@ public protocol MovieRepositoryProtocol {
 	func addToFavorite(movie: MovieModel) -> AnyPublisher<Bool, Error>
 	func deleteFromFavorite(with id: String) -> AnyPublisher<Bool, Error>
 	func isFavorite(id: String) -> AnyPublisher<Bool, Never>
+	func getFavoriteMovies() -> AnyPublisher<[MovieModel], Error>
 }
 
 public final class MovieRepository: NSObject {
@@ -41,6 +42,7 @@ public final class MovieRepository: NSObject {
 }
 
 extension MovieRepository: MovieRepositoryProtocol {
+	
 	// MARK: - Remote
 	public func getNowPlayingMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _remote.getNowPlayingMovies()
@@ -91,6 +93,12 @@ extension MovieRepository: MovieRepositoryProtocol {
 	
 	public func isFavorite(id: String) -> AnyPublisher<Bool, Never> {
 		return _locale.isFavorite(with: id)
+			.eraseToAnyPublisher()
+	}
+	
+	public func getFavoriteMovies() -> AnyPublisher<[MovieModel], Error> {
+		return _locale.getFavoriteMovies()
+			.map { MovieMapper.transformEntityToDomain(entity: $0) }
 			.eraseToAnyPublisher()
 	}
 }

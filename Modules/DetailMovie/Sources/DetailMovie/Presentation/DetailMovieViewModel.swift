@@ -79,7 +79,6 @@ public final class DetailMovieViewModel: ObservableObject {
 					self.errorMessage = error.localizedDescription
 				}
 			} receiveValue: { result in
-				print(result)
 				self.isFavorite = result
 			}
 			.store(in: &cancellables)

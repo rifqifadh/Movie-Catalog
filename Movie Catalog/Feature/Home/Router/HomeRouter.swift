@@ -11,7 +11,7 @@ import DetailMovie
 
 class HomeRouter {
 	
-	func makeDetailView(for movie: Core.MovieModel) -> some View {
+	func makeDetailView(for movie: MovieModel) -> some View {
 		let useCase = Injection.init().provideDetailMovie(movie: movie)
 		let viewModel = DetailMovieViewModel(useCase: useCase, movie: movie)
 		

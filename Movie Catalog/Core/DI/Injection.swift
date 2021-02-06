@@ -10,6 +10,7 @@ import Core
 import RealmSwift
 import Home
 import DetailMovie
+import Favorite
 
 class Injection: NSObject {
 	
@@ -31,5 +32,11 @@ class Injection: NSObject {
 		let repository = provideRepository()
 		
 		return DetailMovieInteractor(repository: repository, movie: movie)
+	}
+	
+	func provideFavorite() -> FavoriteUseCase {
+		let repository = provideRepository()
+		
+		return FavoriteInteractor(repository: repository)
 	}
 }

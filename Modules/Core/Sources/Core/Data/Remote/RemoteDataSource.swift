@@ -17,6 +17,7 @@ public protocol RemoteDataSourceProtocol: AnyObject {
 	func getUpcomingMovies() -> AnyPublisher<MoviesResponses, Error>
 	func getMovie(with id: String) -> AnyPublisher<MovieResponse, Error>
 	func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesResponses, Error>
+	func getCredits(with id: String) -> AnyPublisher<CreditsResponse, Error>
 }
 
 public final class RemoteDataSourceImpl: NSObject {
@@ -54,5 +55,9 @@ extension RemoteDataSourceImpl: RemoteDataSourceProtocol {
 	public func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesResponses, Error> {
 		NetworkService.request(.getRecommendationMovies(id: id), response: MoviesResponses.self)
 			.eraseToAnyPublisher()
+	}
+	
+	public func getCredits(with id: String) -> AnyPublisher<CreditsResponse, Error> {
+		NetworkService.request(.getCredits(id: id), response: CreditsResponse.self)
 	}
 }

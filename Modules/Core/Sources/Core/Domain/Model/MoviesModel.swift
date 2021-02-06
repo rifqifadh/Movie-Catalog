@@ -48,7 +48,6 @@ public struct MovieModel: Identifiable, Equatable, Codable {
 			return .gray
 		}
 	}
-	public var isFavorite: Bool = false
 }
 
 #if DEBUG
