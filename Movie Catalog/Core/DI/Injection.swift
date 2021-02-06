@@ -10,27 +10,28 @@ import Movie
 import Core
 import Realm
 import RealmSwift
+import Home
 
 class Injection: NSObject {
 	
 	let realm = try? Realm()
 	
-	func provideMovies<U: UseCase>() -> U where U.Request == String, U.Response == MoviesModel {
+	func provideHome() -> HomeUseCase {
 		
-		let remote = GetMoviesRemoteDataSource()
-		let mapper = MoviesTransformer()
-		
-		let repository = GetMoviesRepository(remoteDataSource: remote, mapper: mapper)
-		
-		return Interactor(repository: repository) as! U
-	}
-	
-	func provideDetailMovie(movie: MovieModel) -> DetailMovieUseCase {
-		let remote: RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
-		let locale: LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
+		let remote: Core.RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
+		let locale: Core.LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
 		
 		let repository = MovieRepository.sharedInstance(remote, locale)
 		
-		return DetailMovieInteractor(repository: repository, movie: movie)
+		return HomeInteractor(repository: repository)
 	}
+	
+//	func provideDetailMovie(movie: Core.MovieModel) -> DetailMovieUseCase {
+//		let remote: Movie.RemoteDataSourceImpl = RemoteDataSourceImpl.sharedInstance
+//		let locale: Movie.LocaleDataSourceImpl = LocaleDataSourceImpl.sharedInstance(realm)
+//		
+//		let repository = MovieRepository.sharedInstance(remote, locale)
+//		
+//		return DetailMovieInteractor(repository: repository, movie: movie)
+//	}
 }

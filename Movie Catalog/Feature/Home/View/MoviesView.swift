@@ -7,24 +7,33 @@
 
 import SwiftUI
 import Core
-import Movie
+import Home
 import SharedUI
 
 struct MoviesView: View {
-	@StateObject var viewModel = MoviesViewModel()
+	@StateObject var viewModel = HomeViewModel(useCase: Injection().provideHome())
 	@State var firstAppear: Bool = true
 	
 	var body: some View {
-		NavigationView {
+		return NavigationView {
 			List {
-			  ForEach(viewModel.homeSection.sorted(by: ==), id: \.key) { key, value in
-				 HomeRowView(viewModel: viewModel, title: key.rawValue, items: value)
+				ForEach(viewModel.homeSection.sorted(by: { $0.0 < $1.0 }), id: \.key) { key, value in
+					HomeRowView(items: value) {
+						Text(key.rawValue)
+							.font(.title3)
+							.fontWeight(.medium)
+							.padding(.leading, 15)
+							.padding(.top, 16)
+					} destination: { movie in
+						Text("title \(movie.title)")
+					}
+
 			  }
 			  .listRowInsets(EdgeInsets())
 			}
 			.onAppear {
 				if !firstAppear { return }
-				viewModel.getMovieSection()
+				viewModel.getMoviesSection()
 				firstAppear = false
 			}
 			.navigationTitle("Movies")
