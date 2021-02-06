@@ -42,7 +42,6 @@ public class LocaleDataSourceImpl: LocaleDataSourceProtocol {
 	}
 	
 	func addToFavorite(entity: MovieEntity) -> AnyPublisher<Bool, Error> {
-		print(entity)
 		return Future<Bool, Error> { completion in
 			if let realm = self._realm {
 				do {

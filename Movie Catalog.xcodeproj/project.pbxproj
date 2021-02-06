@@ -47,6 +47,7 @@
 		99122E4425CC5272002BB5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991D417925CE717200D91880 /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = Modules/Home; sourceTree = "<group>"; };
 		991D418825CEBC9900D91880 /* DetailMovie */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DetailMovie; path = Modules/DetailMovie; sourceTree = "<group>"; };
+		991D419825CEF6A700D91880 /* Favorite */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Favorite; path = Modules/Favorite; sourceTree = "<group>"; };
 		994617F925C44F860090CD03 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		9946180325C4511E0090CD03 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		9946180725C4512D0090CD03 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				997CC36B25C1447C0098ABA4 /* .swiftlint.yml */,
+				991D419825CEF6A700D91880 /* Favorite */,
 				991D418825CEBC9900D91880 /* DetailMovie */,
 				991D417925CE717200D91880 /* Home */,
 				997CC36825C143C90098ABA4 /* SharedUI */,

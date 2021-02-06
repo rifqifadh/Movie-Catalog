@@ -89,9 +89,7 @@ struct ContentDetailMovieView: View {
 
 	private func favoriteButton() -> some View {
 		Button {
-			withAnimation(.easeInOut) {
-				viewModel.addToFavorite()
-			}
+			viewModel.actionFavoriteButton()
 		} label: {
 			ZStack(alignment: .center) {
 				Circle()

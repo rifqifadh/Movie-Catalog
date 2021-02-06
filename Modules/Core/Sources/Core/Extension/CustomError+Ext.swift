@@ -18,7 +18,6 @@ public enum URLError: LocalizedError {
     case .addressUnreachable(let url): return "\(url.absoluteString) is unreachable."
     }
   }
- 
 }
  
 public enum DatabaseError: LocalizedError {

@@ -21,6 +21,8 @@ public final class DetailMovieViewModel: ObservableObject {
 	@Published public private(set) var isLoadingMovies = false
 	@Published public private(set) var isFavorite = false
 	@Published public private(set) var errorMessage = ""
+	@Published public private(set) var successAddToFav = false
+	@Published public var alertConfirmDelete = false
 	
 	public init(
 		useCase: DetailMovieUseCase,
@@ -69,12 +71,15 @@ public final class DetailMovieViewModel: ObservableObject {
 			.sink { completion in
 				switch completion {
 				case .finished:
-					print("add to favorite")
+					self.successAddToFav = true
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+						self.successAddToFav = false
+					}
 				case .failure(let error):
-					print(error.localizedDescription)
 					self.errorMessage = error.localizedDescription
 				}
 			} receiveValue: { result in
+				print(result)
 				self.isFavorite = result
 			}
 			.store(in: &cancellables)
@@ -90,6 +95,7 @@ public final class DetailMovieViewModel: ObservableObject {
 	}
 	
 	public func deleteFromFavorite() {
+		alertConfirmDelete = false
 		_useCase.deleteFromFavorite(id: String(_movieModel.id))
 			.receive(on: RunLoop.main)
 			.sink { completion in
@@ -101,8 +107,16 @@ public final class DetailMovieViewModel: ObservableObject {
 					self.errorMessage = error.localizedDescription
 				}
 			} receiveValue: { result in
-				self.isFavorite = result
+				self.isFavorite = !result
 			}
 			.store(in: &cancellables)
+	}
+	
+	public func actionFavoriteButton() {
+		if isFavorite {
+			alertConfirmDelete = true
+		} else {
+			addToFavorite()
+		}
 	}
 }

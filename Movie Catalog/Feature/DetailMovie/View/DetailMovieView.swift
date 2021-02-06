@@ -16,10 +16,34 @@ struct DetailMovieView: View {
 	@StateObject var viewModel: DetailMovieViewModel
 	@State private var toggle = false
 	
-	var movie: Core.MovieModel
+	var movie: MovieModel
+	
+	// MARK: - blurView
+	
+	var blurView: some View {
+			VisualEffectBlur(blurStyle: .systemUltraThinMaterial) {
+				VStack(alignment: .center) {
+					Image(systemName: "checkmark")
+						.resizable()
+						.frame(width: 100, height: 100)
+					
+					Spacer()
+					
+					Text("Added to Favorite")
+						.font(.title3)
+						.fontWeight(.semibold)
+				}
+				.foregroundColor(Color.secondary)
+				.padding()
+			}
+			.cornerRadius(16)
+		.frame(width: 200, height: 200, alignment: .center)
+	}
+	
+	// MARK: - body
 	
 	var body: some View {
-		ZStack {
+		ZStack(alignment: .center) {
 			VStack {
 				StickyHeader(heightHeader: 290) {
 					WebImage(url: viewModel.movie?.backdropUrl)
@@ -36,7 +60,7 @@ struct DetailMovieView: View {
 							destination: { movie in
 								DetailMovieRouter().makeDetailView(for: movie)
 							})
-						.redacted(reason: viewModel.isLoadingMovies ? .placeholder : [])
+							.redacted(reason: viewModel.isLoadingMovies ? .placeholder : [])
 					}
 					.cornerRadius(20)
 					.offset(x: 0, y: -32)
@@ -44,6 +68,7 @@ struct DetailMovieView: View {
 				} dismiss: {
 					self.presentationMode.wrappedValue.dismiss()
 				}
+				
 				.onAppear {
 					viewModel.getMovie(with: movie.id)
 					viewModel.getRecommendationMovies(id: movie.id)
@@ -51,6 +76,16 @@ struct DetailMovieView: View {
 				}
 				.navigationBarHidden(true)
 			}
+			
+			if viewModel.successAddToFav {
+				blurView
+			}
 		}
+		.actionSheet(isPresented: $viewModel.alertConfirmDelete, content: {
+			ActionSheet(title: Text("Apakah anda yakin ingin menghapus \(movie.title) dari daftar Favorite ?"),
+							buttons: [
+								.default(Text("Delete")) { viewModel.deleteFromFavorite() },
+								.cancel()])
+		})
 	}
 }
