@@ -38,7 +38,8 @@ public struct RecommendationMoviesRow<Destination: View>: View {
 								MovieCardView(poster: movie.poster,
 												  progressValue: (movie.voteAverage * 10),
 												  title: movie.title,
-												  ratingColor: movie.ratingProgressColor)
+												  ratingColor: movie.ratingProgressColor,
+												  width: 110)
 							}
 							.buttonStyle(PlainButtonStyle())
 						}
