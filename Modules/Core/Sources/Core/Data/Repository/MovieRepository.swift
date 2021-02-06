@@ -9,12 +9,18 @@ import Foundation
 import Combine
 
 public protocol MovieRepositoryProtocol {
+	// MARK: - Remote
 	func getNowPlayingMovies() -> AnyPublisher<MoviesModel, Error>
 	func getPopularMovies() -> AnyPublisher<MoviesModel, Error>
 	func getTopRatedMovies() -> AnyPublisher<MoviesModel, Error>
 	func getUpcomingMovies() -> AnyPublisher<MoviesModel, Error>
 	func getMovie(with id: String) -> AnyPublisher<DetailMovieModel, Error>
 	func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error>
+	
+	// MARK: - Locale
+	func addToFavorite(movie: MovieModel) -> AnyPublisher<Bool, Error>
+	func deleteFromFavorite(with id: String) -> AnyPublisher<Bool, Error>
+	func isFavorite(id: String) -> AnyPublisher<Bool, Never>
 }
 
 public final class MovieRepository: NSObject {
@@ -35,6 +41,7 @@ public final class MovieRepository: NSObject {
 }
 
 extension MovieRepository: MovieRepositoryProtocol {
+	// MARK: - Remote
 	public func getNowPlayingMovies() -> AnyPublisher<MoviesModel, Error> {
 		return _remote.getNowPlayingMovies()
 			.map { MoviesMapper.transformResponseToDomain(response: $0)}
@@ -68,6 +75,22 @@ extension MovieRepository: MovieRepositoryProtocol {
 	public func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error> {
 		return _remote.getRecommendationMovies(with: id)
 			.map { MoviesMapper.transformResponseToDomain(response: $0) }
+			.eraseToAnyPublisher()
+	}
+	
+	// MARK: - Locale
+	public func addToFavorite(movie: MovieModel) -> AnyPublisher<Bool, Error> {
+		return _locale.addToFavorite(entity: MovieMapper.transformDomainToEntity(domain: movie))
+			.eraseToAnyPublisher()
+	}
+	
+	public func deleteFromFavorite(with id: String) -> AnyPublisher<Bool, Error> {
+		return _locale.deleteFromFavorite(with: id)
+			.eraseToAnyPublisher()
+	}
+	
+	public func isFavorite(id: String) -> AnyPublisher<Bool, Never> {
+		return _locale.isFavorite(with: id)
 			.eraseToAnyPublisher()
 	}
 }

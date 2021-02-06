@@ -13,7 +13,6 @@ import Core
 
 struct ContentDetailMovieView: View {
 	var movie: DetailMovieModel?
-	@State var toggle = true
 	@ObservedObject var viewModel: DetailMovieViewModel
 
 	var body: some View {
@@ -91,15 +90,14 @@ struct ContentDetailMovieView: View {
 	private func favoriteButton() -> some View {
 		Button {
 			withAnimation(.easeInOut) {
-				toggle.toggle()
-//				viewModel.addToFavorite()
+				viewModel.addToFavorite()
 			}
 		} label: {
 			ZStack(alignment: .center) {
 				Circle()
 					.fill(Color("AccentColor"))
 				HStack {
-					Image(systemName: toggle ? "heart.fill" : "heart.slash.fill")
+					Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart.slash.fill")
 						.foregroundColor(.white)
 				}
 				.padding(.horizontal, 5)

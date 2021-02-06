@@ -47,19 +47,62 @@ public final class DetailMovieViewModel: ObservableObject {
 	}
 	
 	public func getRecommendationMovies(id: Int) {
-			isLoadingMovies = true
+		isLoadingMovies = true
 		_useCase.getRecommendationMovies(with: String(id))
-				.receive(on: RunLoop.main)
-				.sink { completion in
-					switch completion {
-					case .finished:
-						self.isLoadingMovies = false
-					case .failure(let error):
-						self.errorMessage = error.localizedDescription
-					}
-				} receiveValue: { movies in
-					self.recommendationMovies = movies.results
+			.receive(on: RunLoop.main)
+			.sink { completion in
+				switch completion {
+				case .finished:
+					self.isLoadingMovies = false
+				case .failure(let error):
+					self.errorMessage = error.localizedDescription
 				}
-				.store(in: &cancellables)
-		}
+			} receiveValue: { movies in
+				self.recommendationMovies = movies.results
+			}
+			.store(in: &cancellables)
+	}
+	
+	public func addToFavorite() {
+		_useCase.addToFavorite(movie: _movieModel)
+			.receive(on: RunLoop.main)
+			.sink { completion in
+				switch completion {
+				case .finished:
+					print("add to favorite")
+				case .failure(let error):
+					print(error.localizedDescription)
+					self.errorMessage = error.localizedDescription
+				}
+			} receiveValue: { result in
+				self.isFavorite = result
+			}
+			.store(in: &cancellables)
+	}
+	
+	public func isFavoriteMovie() {
+		_useCase.isFavorite(id: String(_movieModel.id))
+			.receive(on: RunLoop.main)
+			.sink(receiveValue: { result in
+				self.isFavorite = result
+			})
+			.store(in: &cancellables)
+	}
+	
+	public func deleteFromFavorite() {
+		_useCase.deleteFromFavorite(id: String(_movieModel.id))
+			.receive(on: RunLoop.main)
+			.sink { completion in
+				switch completion {
+				case .finished:
+					print("delete from favorite")
+				case .failure(let error):
+					print(error.localizedDescription)
+					self.errorMessage = error.localizedDescription
+				}
+			} receiveValue: { result in
+				self.isFavorite = result
+			}
+			.store(in: &cancellables)
+	}
 }

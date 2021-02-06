@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Realm
-import RealmSwift
 
 struct RootTabView: View {
 	@State var selectedView = 0

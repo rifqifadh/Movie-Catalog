@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-public class MovieEntity: Object {
+class MovieEntity: Object {
 	
 	@objc dynamic var id: Int = 0
 	@objc dynamic var title: String = ""
@@ -18,7 +18,7 @@ public class MovieEntity: Object {
 	@objc dynamic var backdropPath: String = ""
 	@objc dynamic var releaseDate: String = ""
 	
-	public override class func primaryKey() -> String? {
+	override class func primaryKey() -> String? {
 		return "id"
 	}
 	

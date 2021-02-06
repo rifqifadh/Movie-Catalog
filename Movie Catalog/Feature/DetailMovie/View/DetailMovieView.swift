@@ -47,6 +47,7 @@ struct DetailMovieView: View {
 				.onAppear {
 					viewModel.getMovie(with: movie.id)
 					viewModel.getRecommendationMovies(id: movie.id)
+					viewModel.isFavoriteMovie()
 				}
 				.navigationBarHidden(true)
 			}
