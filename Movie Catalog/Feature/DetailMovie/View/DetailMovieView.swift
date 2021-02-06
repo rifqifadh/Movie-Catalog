@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SharedUI
+import MovieCatalogUI
 import Core
 import SDWebImageSwiftUI
 import DetailMovie

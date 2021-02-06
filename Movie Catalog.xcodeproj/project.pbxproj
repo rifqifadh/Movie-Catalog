@@ -21,10 +21,9 @@
 		9946181825C5859E0090CD03 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946181725C5859E0090CD03 /* Injection.swift */; };
 		997362E225C7BA95006D7185 /* DetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997362E125C7BA95006D7185 /* DetailMovieView.swift */; };
 		997CC36025C1437B0098ABA4 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 997CC35F25C1437B0098ABA4 /* Core */; };
-		997CC36225C1437E0098ABA4 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 997CC36125C1437E0098ABA4 /* Networking */; };
 		9982CD0225CF0FCA003E59B9 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982CD0125CF0FCA003E59B9 /* FavoriteRouter.swift */; };
+		9982CD1925CF1DEB003E59B9 /* MovieCatalogUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9982CD1825CF1DEB003E59B9 /* MovieCatalogUI */; };
 		9985F29D25C3DF1E00FBB3C2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9985F29C25C3DF1E00FBB3C2 /* SDWebImageSwiftUI */; };
-		9985F2A025C3DF7C00FBB3C2 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9985F29F25C3DF7C00FBB3C2 /* SharedUI */; };
 		99FD25EE25C130CE00A61932 /* MovieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FD25ED25C130CE00A61932 /* MovieApp.swift */; };
 		99FD25F225C130D600A61932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FD25F125C130D600A61932 /* Assets.xcassets */; };
 		99FD25F525C130D600A61932 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FD25F425C130D600A61932 /* Preview Assets.xcassets */; };
@@ -56,7 +55,6 @@
 		9946180A25C4513B0090CD03 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9946181725C5859E0090CD03 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		997362E125C7BA95006D7185 /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
-		997CC36825C143C90098ABA4 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SharedUI; path = Modules/SharedUI; sourceTree = "<group>"; };
 		997CC36B25C1447C0098ABA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9982CD0125CF0FCA003E59B9 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		99FD25EA25C130CD00A61932 /* Movie Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Catalog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +63,6 @@
 		99FD25F425C130D600A61932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99FD25F625C130D600A61932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99FD25FD25C1312B00A61932 /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Core; path = Modules/Core; sourceTree = "<group>"; };
-		99FD25FF25C1341E00A61932 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = Modules/Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +79,10 @@
 			files = (
 				991D418C25CEBCE700D91880 /* DetailMovie in Frameworks */,
 				9985F29D25C3DF1E00FBB3C2 /* SDWebImageSwiftUI in Frameworks */,
-				9985F2A025C3DF7C00FBB3C2 /* SharedUI in Frameworks */,
-				997CC36225C1437E0098ABA4 /* Networking in Frameworks */,
 				997CC36025C1437B0098ABA4 /* Core in Frameworks */,
 				991D417D25CE718900D91880 /* Home in Frameworks */,
 				991D419C25CEFA3700D91880 /* Favorite in Frameworks */,
+				9982CD1925CF1DEB003E59B9 /* MovieCatalogUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,8 +225,6 @@
 				991D419825CEF6A700D91880 /* Favorite */,
 				991D418825CEBC9900D91880 /* DetailMovie */,
 				991D417925CE717200D91880 /* Home */,
-				997CC36825C143C90098ABA4 /* SharedUI */,
-				99FD25FF25C1341E00A61932 /* Networking */,
 				99FD25FD25C1312B00A61932 /* Core */,
 				99FD25EC25C130CD00A61932 /* Movie Catalog */,
 				99122E4125CC5272002BB5A0 /* MovieCatalogTests */,
@@ -305,12 +299,11 @@
 			name = "Movie Catalog";
 			packageProductDependencies = (
 				997CC35F25C1437B0098ABA4 /* Core */,
-				997CC36125C1437E0098ABA4 /* Networking */,
 				9985F29C25C3DF1E00FBB3C2 /* SDWebImageSwiftUI */,
-				9985F29F25C3DF7C00FBB3C2 /* SharedUI */,
 				991D417C25CE718900D91880 /* Home */,
 				991D418B25CEBCE700D91880 /* DetailMovie */,
 				991D419B25CEFA3700D91880 /* Favorite */,
+				9982CD1825CF1DEB003E59B9 /* MovieCatalogUI */,
 			);
 			productName = "Movie Catalog";
 			productReference = 99FD25EA25C130CD00A61932 /* Movie Catalog.app */;
@@ -345,6 +338,7 @@
 			mainGroup = 99FD25E125C130CD00A61932;
 			packageReferences = (
 				9985F29B25C3DF1E00FBB3C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				9982CD1725CF1DEB003E59B9 /* XCRemoteSwiftPackageReference "MovieCatalogUI" */,
 			);
 			productRefGroup = 99FD25EB25C130CD00A61932 /* Products */;
 			projectDirPath = "";
@@ -667,6 +661,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9982CD1725CF1DEB003E59B9 /* XCRemoteSwiftPackageReference "MovieCatalogUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rifqifadh/MovieCatalogUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
 		9985F29B25C3DF1E00FBB3C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -694,18 +696,15 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;
 		};
-		997CC36125C1437E0098ABA4 /* Networking */ = {
+		9982CD1825CF1DEB003E59B9 /* MovieCatalogUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Networking;
+			package = 9982CD1725CF1DEB003E59B9 /* XCRemoteSwiftPackageReference "MovieCatalogUI" */;
+			productName = MovieCatalogUI;
 		};
 		9985F29C25C3DF1E00FBB3C2 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9985F29B25C3DF1E00FBB3C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		9985F29F25C3DF7C00FBB3C2 /* SharedUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SharedUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

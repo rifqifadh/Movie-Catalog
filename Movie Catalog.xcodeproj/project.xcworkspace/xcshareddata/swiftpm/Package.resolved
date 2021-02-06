@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "MovieCatalogUI",
+        "repositoryURL": "https://github.com/rifqifadh/MovieCatalogUI.git",
+        "state": {
+          "branch": null,
+          "revision": "7f4a4725f8d8c7c1ab7ebb9714357bd91b8375b7",
+          "version": "0.0.2"
+        }
+      },
+      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa.git",
         "state": {

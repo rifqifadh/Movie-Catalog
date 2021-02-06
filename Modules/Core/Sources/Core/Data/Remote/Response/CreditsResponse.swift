@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CreditsResponse: Decodable {
+public struct CreditsResponse: Codable {
 	let id: Int
 	let cast: [CastResponse]
 }
 
-struct CastResponse: Decodable {
+public struct CastResponse: Codable {
 	let id: Int
 	let name: String
 	let character: String

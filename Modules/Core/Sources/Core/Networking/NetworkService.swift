@@ -8,30 +8,6 @@
 import Foundation
 import Combine
 
-public struct MovieResponses: Codable {
-  
-  let page: Int?
-}
-
-extension URLResponse {
-	func requireHTTPStatusCode(_ code: Int) throws {
-		guard
-			let response = self as? HTTPURLResponse,
-			response.statusCode == 200
-		else { throw URLError(.badServerResponse) }
-	}
-}
-
-extension Publisher where Output == URLSession.DataTaskPublisher.Output {
-	func justData(ifStatusCode code: Int) -> Publishers.TryMap<Self, Data> {
-		return self
-			.tryMap { data, response in
-				try response.requireHTTPStatusCode(code)
-				return data
-			}
-	}
-}
-
 public final class NetworkService {
   
   static private let decoder: JSONDecoder = {
@@ -56,7 +32,7 @@ public final class NetworkService {
 		.tryMap { element -> Data in
 			guard let httpResponse = element.response as? HTTPURLResponse,
 					httpResponse.statusCode == 200 else {
-				throw URLError(.badServerResponse)
+				throw URLError.addressUnreachable(endpoint.url)
 			}
 			return element.data
 		}

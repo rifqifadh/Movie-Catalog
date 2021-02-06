@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SharedUI
+import MovieCatalogUI
 import Core
 
 import SwiftUI

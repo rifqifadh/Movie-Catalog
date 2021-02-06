@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Networking
 
 public struct DetailMovieModel: Decodable {
 	

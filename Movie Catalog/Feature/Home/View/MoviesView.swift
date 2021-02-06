@@ -8,7 +8,7 @@
 import SwiftUI
 import Core
 import Home
-import SharedUI
+import MovieCatalogUI
 
 struct MoviesView: View {
 	@StateObject var viewModel = HomeViewModel(useCase: Injection().provideHome())

@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import SharedUI
 import Core
 import SDWebImageSwiftUI
+import MovieCatalogUI
 
 public struct CardFavoriteView: View {
 	
