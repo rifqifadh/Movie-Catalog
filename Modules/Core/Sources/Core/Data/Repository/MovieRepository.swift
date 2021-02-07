@@ -16,6 +16,7 @@ public protocol MovieRepositoryProtocol {
 	func getUpcomingMovies() -> AnyPublisher<MoviesModel, Error>
 	func getMovie(with id: String) -> AnyPublisher<DetailMovieModel, Error>
 	func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error>
+	func getCredits(with id: String) -> AnyPublisher<CreditsModel, Error>
 	
 	// MARK: - Locale
 	func addToFavorite(movie: MovieModel) -> AnyPublisher<Bool, Error>
@@ -77,6 +78,12 @@ extension MovieRepository: MovieRepositoryProtocol {
 	public func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error> {
 		return _remote.getRecommendationMovies(with: id)
 			.map { MoviesMapper.transformResponseToDomain(response: $0) }
+			.eraseToAnyPublisher()
+	}
+	
+	public func getCredits(with id: String) -> AnyPublisher<CreditsModel, Error> {
+		return _remote.getCredits(with: id)
+			.map { CreditsMapper.transformResponseToDomain(response: $0) }
 			.eraseToAnyPublisher()
 	}
 	

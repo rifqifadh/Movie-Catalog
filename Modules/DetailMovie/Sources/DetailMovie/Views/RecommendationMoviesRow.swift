@@ -8,7 +8,7 @@
 import Foundation
 import MovieCatalogUI
 import Core
-
+import SDWebImageSwiftUI
 import SwiftUI
 
 public struct RecommendationMoviesRow<Destination: View>: View {
@@ -24,12 +24,12 @@ public struct RecommendationMoviesRow<Destination: View>: View {
 	}
 	
 	public var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .leading, spacing: 0) {
 			Text("Recommendation Movies")
 				.font(.headline)
 				.fontWeight(.semibold)
-				.padding(.horizontal)
-				.padding(.top)
+				.padding()
+			
 			ScrollView(.horizontal, showsIndicators: false) {
 				LazyHStack(alignment: .top, spacing: 12) {
 					ForEach(items) { movie in
@@ -47,6 +47,7 @@ public struct RecommendationMoviesRow<Destination: View>: View {
 				}
 				.padding(.horizontal)
 			}
+			.frame(height: 230)
 		}
 	}
 }

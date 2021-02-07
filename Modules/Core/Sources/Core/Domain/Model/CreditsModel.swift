@@ -8,12 +8,16 @@
 import Foundation
 
 public struct CreditsModel: Decodable {
-	let id: Int
-	let cast: [CastModel]
+	public let id: Int
+	public let cast: [CastModel]
 }
 
-struct CastModel: Decodable {
-	let id: Int
-	let name: String
-	let character: String
+public struct CastModel: Decodable, Identifiable {
+	public let id: Int
+	public let name: String
+	public let character: String
+	public let profilePath: String
+	public var profile: String {
+		Constants.TMDBEnv.imageUrl(size: "w500") + profilePath
+	}
 }

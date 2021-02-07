@@ -666,7 +666,7 @@
 			repositoryURL = "https://github.com/rifqifadh/MovieCatalogUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				minimumVersion = 0.0.4;
 			};
 		};
 		9985F29B25C3DF1E00FBB3C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {

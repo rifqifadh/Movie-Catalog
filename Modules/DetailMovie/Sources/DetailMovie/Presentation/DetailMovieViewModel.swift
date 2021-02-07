@@ -17,8 +17,10 @@ public final class DetailMovieViewModel: ObservableObject {
 	
 	@Published public private(set) var movie: DetailMovieModel?
 	@Published public private(set) var recommendationMovies: [MovieModel] = []
+	@Published public private(set) var castMovie: [CastModel] = []
 	@Published public private(set) var isLoadingDetail = false
 	@Published public private(set) var isLoadingMovies = false
+	@Published public private(set) var isLoadingCredits = false
 	@Published public private(set) var isFavorite = false
 	@Published public private(set) var errorMessage = ""
 	@Published public private(set) var successAddToFav = false
@@ -61,6 +63,23 @@ public final class DetailMovieViewModel: ObservableObject {
 				}
 			} receiveValue: { movies in
 				self.recommendationMovies = movies.results
+			}
+			.store(in: &cancellables)
+	}
+	
+	public func getCredits(id: Int) {
+		isLoadingCredits = true
+		_useCase.getCredits(with: String(id))
+			.receive(on: RunLoop.main)
+			.sink { completion in
+				switch completion {
+				case .finished:
+					self.isLoadingCredits = false
+				case .failure(let error):
+					self.errorMessage = error.localizedDescription
+				}
+			} receiveValue: { credits in
+				self.castMovie = credits.cast
 			}
 			.store(in: &cancellables)
 	}

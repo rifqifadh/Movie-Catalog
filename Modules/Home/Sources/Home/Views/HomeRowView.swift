@@ -8,7 +8,7 @@
 import Foundation
 import MovieCatalogUI
 import Core
-
+import SDWebImageSwiftUI
 import SwiftUI
 
 public struct HomeRowView<Header: View, Destination: View>: View {

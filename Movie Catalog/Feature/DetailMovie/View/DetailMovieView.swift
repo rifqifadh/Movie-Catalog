@@ -21,22 +21,22 @@ struct DetailMovieView: View {
 	// MARK: - blurView
 	
 	var blurView: some View {
-			VisualEffectBlur(blurStyle: .systemUltraThinMaterial) {
-				VStack(alignment: .center) {
-					Image(systemName: "checkmark")
-						.resizable()
-						.frame(width: 100, height: 100)
-					
-					Spacer()
-					
-					Text("Added to Favorite")
-						.font(.title3)
-						.fontWeight(.semibold)
-				}
-				.foregroundColor(Color.secondary)
-				.padding()
+		VisualEffectBlur(blurStyle: .systemUltraThinMaterial) {
+			VStack(alignment: .center) {
+				Image(systemName: "checkmark")
+					.resizable()
+					.frame(width: 100, height: 100)
+				
+				Spacer()
+				
+				Text("Added to Favorite")
+					.font(.title3)
+					.fontWeight(.semibold)
 			}
-			.cornerRadius(16)
+			.foregroundColor(Color.secondary)
+			.padding()
+		}
+		.cornerRadius(16)
 		.frame(width: 200, height: 200, alignment: .center)
 	}
 	
@@ -44,16 +44,20 @@ struct DetailMovieView: View {
 	
 	var body: some View {
 		ZStack(alignment: .center) {
-			VStack {
+			VStack(spacing: 0) {
 				StickyHeader(heightHeader: 290) {
 					WebImage(url: viewModel.movie?.backdropUrl)
 						.resizable()
 						.aspectRatio(contentMode: .fill)
 						.clipShape(RoundedRectangle(cornerRadius: 25.0))
 				} content: {
-					VStack {
+					VStack(alignment: .leading, spacing: 0) {
+						
 						ContentDetailMovieView(movie: viewModel.movie, viewModel: viewModel)
 							.redacted(reason: viewModel.isLoadingDetail ? .placeholder : [])
+						
+						CastsRowView(casts: viewModel.castMovie)
+							.redacted(reason: viewModel.isLoadingCredits ? .placeholder : [])
 						
 						RecommendationMoviesRow(
 							items: viewModel.recommendationMovies,
@@ -61,6 +65,7 @@ struct DetailMovieView: View {
 								DetailMovieRouter().makeDetailView(for: movie)
 							})
 							.redacted(reason: viewModel.isLoadingMovies ? .placeholder : [])
+							.padding(.bottom)
 					}
 					.cornerRadius(20)
 					.offset(x: 0, y: -32)
@@ -72,6 +77,7 @@ struct DetailMovieView: View {
 				.onAppear {
 					viewModel.getMovie(with: movie.id)
 					viewModel.getRecommendationMovies(id: movie.id)
+					viewModel.getCredits(id: movie.id)
 					viewModel.isFavoriteMovie()
 				}
 				.navigationBarHidden(true)

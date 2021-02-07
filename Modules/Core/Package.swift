@@ -16,7 +16,8 @@ let package = Package(
 		// Dependencies declare other packages that this package depends on.
 		// .package(url: /* package url */, from: "1.0.0"),
 		.package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "10.1.4"),
-		.package(name: "SDWebImageSwiftUI", url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "1.5.0")
+		.package(name: "SDWebImageSwiftUI", url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "1.5.0"),
+		.package(name: "MovieCatalogUI", url: "https://github.com/rifqifadh/MovieCatalogUI.git", from: "0.0.2"),
 	],
 	targets: [
 		// Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -26,6 +27,7 @@ let package = Package(
 			dependencies: [
 				.product(name: "RealmSwift", package: "Realm"),
 				.product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI"),
+				.product(name: "MovieCatalogUI", package: "MovieCatalogUI"),
 			]),
 		.testTarget(
 			name: "CoreTests",

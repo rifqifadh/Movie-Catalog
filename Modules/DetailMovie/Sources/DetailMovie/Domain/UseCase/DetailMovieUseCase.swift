@@ -13,6 +13,7 @@ public protocol DetailMovieUseCase {
 	// MARK: - Remote
 	func getMovie(with id: String) -> AnyPublisher<DetailMovieModel, Error>
 	func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error>
+	func getCredits(with id: String) -> AnyPublisher<CreditsModel, Error>
 	
 	// MARK: - Locale
 	func addToFavorite(movie: MovieModel) -> AnyPublisher<Bool, Error>
@@ -36,6 +37,11 @@ final public class DetailMovieInteractor: DetailMovieUseCase {
 	
 	public func getRecommendationMovies(with id: String) -> AnyPublisher<MoviesModel, Error> {
 		return _repository.getRecommendationMovies(with: id)
+			.eraseToAnyPublisher()
+	}
+	
+	public func getCredits(with id: String) -> AnyPublisher<CreditsModel, Error> {
+		return _repository.getCredits(with: id)
 			.eraseToAnyPublisher()
 	}
 	
