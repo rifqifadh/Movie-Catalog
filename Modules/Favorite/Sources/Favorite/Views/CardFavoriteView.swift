@@ -34,7 +34,7 @@ public struct CardFavoriteView: View {
 					.fixedSize(horizontal: false, vertical: true)
 				
 				HStack(alignment: .center) {
-					ProgressView(value: movie.voteAverage, total: 100)
+					ProgressView(value: (movie.voteAverage * 10), total: 100)
 						.progressViewStyle(
 							CirclePercentageProgressViewStyle(
 								strokeWidth: 8,
