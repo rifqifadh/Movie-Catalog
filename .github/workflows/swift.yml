@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Movie\ Catalog
+    - name: MovieCatalog
       run: swift build -v
     - name: MovieCatalogTests
       run: swift test -v
