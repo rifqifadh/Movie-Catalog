@@ -7,13 +7,13 @@
 
 import SwiftUI
 import MovieCatalogUI
-import Core
+import TheMovieDBSDK
 import SDWebImageSwiftUI
 import DetailMovie
 
 struct DetailMovieView: View {
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-	@StateObject var viewModel: DetailMovieViewModel
+	@StateObject var viewModel: DetailMoviePresenter
 	@State private var toggle = false
 	
 	var movie: MovieModel

@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/rifqifadh/MovieCatalogUI.git",
         "state": {
           "branch": null,
-          "revision": "9b437b2480f9be527234277a29910d0222d90270",
-          "version": "0.0.7"
+          "revision": "3588452ffd7af8ba92d408ca0b2693f057cbe73b",
+          "version": "0.0.4"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "4aaca57fb2f6dc5554a2228cf1d94289bd0a6c7d",
-          "version": "5.10.3"
+          "revision": "a6b6e44eadf0d39250c10a7cc0e3b91d0bdb0e94",
+          "version": "5.10.4"
         }
       },
       {

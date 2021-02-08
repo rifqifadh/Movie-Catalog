@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 public struct CreditsModel: Decodable {
 	public let id: Int

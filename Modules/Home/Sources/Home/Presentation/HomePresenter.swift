@@ -7,9 +7,9 @@
 
 import Combine
 import SwiftUI
-import Core
+import TheMovieDBSDK
 
-public final class HomeViewModel: ObservableObject {
+public final class HomePresenter: ObservableObject {
 	
 	private var _useCase: HomeUseCase
 	private var cancellables = Set<AnyCancellable>()

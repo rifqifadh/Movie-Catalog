@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Core
+import TheMovieDBSDK
 import RealmSwift
 import Home
 import DetailMovie

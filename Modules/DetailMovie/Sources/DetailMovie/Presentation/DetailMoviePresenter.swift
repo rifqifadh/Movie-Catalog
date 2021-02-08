@@ -7,9 +7,9 @@
 
 import SwiftUI
 import Combine
-import Core
+import TheMovieDBSDK
 
-public final class DetailMovieViewModel: ObservableObject {
+public final class DetailMoviePresenter: ObservableObject {
 	
 	private var _useCase: DetailMovieUseCase
 	private var cancellables = Set<AnyCancellable>()

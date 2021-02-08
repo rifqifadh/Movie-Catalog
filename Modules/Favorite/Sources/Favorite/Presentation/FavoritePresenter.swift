@@ -5,11 +5,11 @@
 //  Created by Rifqi Fadhlillah on 07/02/21.
 //
 
-import Core
+import TheMovieDBSDK
 import SwiftUI
 import Combine
 
-public final class FavoriteViewModel: ObservableObject {
+public final class FavoritePresenter: ObservableObject {
 	
 	private var _useCase: FavoriteUseCase
 	private var cancellables = Set<AnyCancellable>()

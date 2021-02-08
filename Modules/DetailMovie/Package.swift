@@ -17,6 +17,7 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
 		.package(path: "../Core"),
 		.package(name: "SDWebImageSwiftUI", url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "1.5.0"),
+		.package(path: "../TheMovieDBSDK")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,7 +26,8 @@ let package = Package(
             name: "DetailMovie",
             dependencies: [
 					"Core",
-					.product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI")
+					.product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI"),
+					"TheMovieDBSDK"
 				]),
         .testTarget(
             name: "DetailMovieTests",

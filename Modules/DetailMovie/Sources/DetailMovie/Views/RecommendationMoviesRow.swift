@@ -7,7 +7,7 @@
 
 import Foundation
 import MovieCatalogUI
-import Core
+import TheMovieDBSDK
 import SDWebImageSwiftUI
 import SwiftUI
 

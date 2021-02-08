@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Core
 
 public struct MoviesModel: Identifiable, Equatable, Codable {
 	public var id = UUID()

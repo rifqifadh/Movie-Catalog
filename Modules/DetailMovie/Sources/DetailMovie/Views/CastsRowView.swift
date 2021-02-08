@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Core
+import TheMovieDBSDK
 import SDWebImageSwiftUI
 
 public struct CastsRowView: View {

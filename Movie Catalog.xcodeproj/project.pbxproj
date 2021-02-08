@@ -19,6 +19,7 @@
 		9946180825C4512D0090CD03 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946180725C4512D0090CD03 /* FavoriteView.swift */; };
 		9946180B25C4513B0090CD03 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946180A25C4513B0090CD03 /* AccountView.swift */; };
 		9946181825C5859E0090CD03 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946181725C5859E0090CD03 /* Injection.swift */; };
+		99487B0D25D16B5E009C9FF7 /* TmdbConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99487B0C25D16B5E009C9FF7 /* TmdbConfig.plist */; };
 		997362E225C7BA95006D7185 /* DetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997362E125C7BA95006D7185 /* DetailMovieView.swift */; };
 		997CC36025C1437B0098ABA4 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 997CC35F25C1437B0098ABA4 /* Core */; };
 		9982CD0225CF0FCA003E59B9 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982CD0125CF0FCA003E59B9 /* FavoriteRouter.swift */; };
@@ -54,6 +55,8 @@
 		9946180725C4512D0090CD03 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		9946180A25C4513B0090CD03 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9946181725C5859E0090CD03 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		99487AE125D14AA8009C9FF7 /* TheMovieDBSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TheMovieDBSDK; path = Modules/TheMovieDBSDK; sourceTree = "<group>"; };
+		99487B0C25D16B5E009C9FF7 /* TmdbConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TmdbConfig.plist; sourceTree = "<group>"; };
 		997362E125C7BA95006D7185 /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
 		997CC36B25C1447C0098ABA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9982CD0125CF0FCA003E59B9 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				997CC36B25C1447C0098ABA4 /* .swiftlint.yml */,
+				99487AE125D14AA8009C9FF7 /* TheMovieDBSDK */,
 				991D419825CEF6A700D91880 /* Favorite */,
 				991D418825CEBC9900D91880 /* DetailMovie */,
 				991D417925CE717200D91880 /* Home */,
@@ -250,6 +254,7 @@
 				99FD25F125C130D600A61932 /* Assets.xcassets */,
 				99FD25F625C130D600A61932 /* Info.plist */,
 				99FD25F325C130D600A61932 /* Preview Content */,
+				99487B0C25D16B5E009C9FF7 /* TmdbConfig.plist */,
 			);
 			path = "Movie Catalog";
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99FD25F525C130D600A61932 /* Preview Assets.xcassets in Resources */,
+				99487B0D25D16B5E009C9FF7 /* TmdbConfig.plist in Resources */,
 				99FD25F225C130D600A61932 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,7 +672,7 @@
 			repositoryURL = "https://github.com/rifqifadh/MovieCatalogUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.4;
+				minimumVersion = 0.0.7;
 			};
 		};
 		9985F29B25C3DF1E00FBB3C2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {

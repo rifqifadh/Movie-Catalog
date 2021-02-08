@@ -9,11 +9,11 @@ import SwiftUI
 import MovieCatalogUI
 import SDWebImageSwiftUI
 import DetailMovie
-import Core
+import TheMovieDBSDK
 
 struct ContentDetailMovieView: View {
 	var movie: DetailMovieModel?
-	@ObservedObject var viewModel: DetailMovieViewModel
+	@ObservedObject var viewModel: DetailMoviePresenter
 
 	var body: some View {
 		VStack(alignment: .leading, spacing: 10) {

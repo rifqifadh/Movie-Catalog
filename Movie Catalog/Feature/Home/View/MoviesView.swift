@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-import Core
+import TheMovieDBSDK
 import Home
 import MovieCatalogUI
 
 struct MoviesView: View {
-	@StateObject var viewModel = HomeViewModel(useCase: Injection().provideHome())
+	@StateObject var viewModel = HomePresenter(useCase: Injection().provideHome())
 	@State var firstAppear: Bool = true
 	
 	var body: some View {

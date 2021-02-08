@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import RealmSwift
+import Core
 
 protocol LocaleDataSourceProtocol: AnyObject {
 	func getFavoriteMovies() -> AnyPublisher<[MovieEntity], Error>

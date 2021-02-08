@@ -7,10 +7,10 @@
 
 import SwiftUI
 import Favorite
-import Core
+import TheMovieDBSDK
 
 struct FavoriteView: View {
-	@StateObject var viewModel = FavoriteViewModel(useCase: Injection().provideFavorite())
+	@StateObject var viewModel = FavoritePresenter(useCase: Injection().provideFavorite())
 	@State var firstAppear: Bool = true
 	
 	// MARK: - Empty Favorite
