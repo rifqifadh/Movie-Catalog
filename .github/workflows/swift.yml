@@ -11,8 +11,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Movie Catalog
-      run: swift build -v
-    - name: MovieCatalogTests
-      run: swift test -v
+    - uses: actions/checkout@v1
+    - name: Force Xcode 12
+      run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+    - name: Run tests
+      run: xcodebuild clean test -project "Movie Catalog.xcodeproj" -scheme "Movie Catalog" -destination "platform=iOS Simulator,name=iPhone 12 Pro Max,OS=latest"
