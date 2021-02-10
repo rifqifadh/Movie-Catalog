@@ -69,7 +69,7 @@ struct DetailMovieView: View {
 					}
 					.cornerRadius(20)
 					.offset(x: 0, y: -32)
-					.background(Color.white.edgesIgnoringSafeArea(.all))
+					.background(Color.systemBackground.edgesIgnoringSafeArea(.all))
 				} dismiss: {
 					self.presentationMode.wrappedValue.dismiss()
 				}

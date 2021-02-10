@@ -28,13 +28,14 @@ struct ContentDetailMovieView: View {
 						Text(movie?.title ?? "")
 							.font(.headline)
 							.fontWeight(.semibold)
+							.foregroundColor(.label)
 							.lineLimit(2)
 							.fixedSize(horizontal: false, vertical: true)
 
 						HStack {
 							Text("\(movie?.releaseDateFormatted ?? "-")")
 								.font(.caption)
-								.foregroundColor(.secondary)
+								.foregroundColor(.secondaryLabel)
 								.fontWeight(.semibold)
 
 							Circle()
@@ -43,13 +44,13 @@ struct ContentDetailMovieView: View {
 
 							Text("\(movie?.runtime.minutesToHoursMinute() ?? "-")")
 								.font(.caption)
-								.foregroundColor(.secondary)
+								.foregroundColor(.secondaryLabel)
 								.fontWeight(.semibold)
 						}
 
 						Text("\(movie?.genresName ?? [""], empty: "-")")
 							.font(.caption)
-							.foregroundColor(.secondary)
+							.foregroundColor(.secondaryLabel)
 							.fontWeight(.semibold)
 							.lineLimit(2)
 							.fixedSize(horizontal: false, vertical: true)
@@ -64,19 +65,21 @@ struct ContentDetailMovieView: View {
 			Text("Tagline")
 				.font(.headline)
 				.fontWeight(.semibold)
+				.foregroundColor(.label)
 
 			Text(movie?.tagline ?? "-")
 				.font(.caption)
-				.foregroundColor(.secondary)
+				.foregroundColor(.secondaryLabel)
 				.fontWeight(.semibold)
 
 			Text("Overview")
 				.font(.headline)
 				.fontWeight(.semibold)
+				.foregroundColor(.label)
 
 			Text(movie?.overview ?? "")
 				.font(.caption)
-				.foregroundColor(.secondary)
+				.foregroundColor(.secondaryLabel)
 				.multilineTextAlignment(.leading)
 				.fixedSize(horizontal: false, vertical: true)
 				
@@ -84,7 +87,7 @@ struct ContentDetailMovieView: View {
 		.padding(.top, 12)
 		.padding(.horizontal)
 		.frame(minWidth: 0, maxWidth: .infinity)
-		.background(Color.white)
+		.background(Color.systemBackground)
 	}
 
 	private func favoriteButton() -> some View {

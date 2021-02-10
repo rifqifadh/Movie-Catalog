@@ -10,6 +10,7 @@ import MovieCatalogUI
 import TheMovieDBSDK
 import SDWebImageSwiftUI
 import SwiftUI
+import Core
 
 public struct RecommendationMoviesRow<Destination: View>: View {
 	
